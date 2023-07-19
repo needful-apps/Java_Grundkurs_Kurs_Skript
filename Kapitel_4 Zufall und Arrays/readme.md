@@ -228,6 +228,58 @@ Löse die Challenge in der Datei `Challenges/BaboonFigure.java`.
 ## Challenge 4 - Abschlussprojekt: Rock Paper Scissors Lizard Spock
 Löse die Challenge in der Datei `Challenges/RockPaperScissorsLizardSpock.java`.
 
+# Streams
+
+## Was ist ein Stream?
+
+In Java repräsentiert ein Stream eine Sequenz von Elementen und unterstützt verschiedene Operationen zur Verarbeitung dieser Elemente. Streams sind speziell für den Gebrauch mit Lambda-Ausdrücken entworfen und bieten eine klare, funktionale Programmieransatz auf Kollektionen von Daten. 
+
+Die Java Stream API kam mit Java 8, sie brachte eine deutliche Verbesserung im Hinblick auf die effiziente Verarbeitung von großen Datensätzen, insbesondere durch die Unterstützung von parallelen Operationen auf diesen Datensätzen.
+
+Einige der Hauptvorteile von Java Stream sind:
+
+- Keine Speicherveränderung: Streams verändern die zugrundeliegende Datenquelle nicht.
+- Funktionale Programmierung: Streams unterstützen funktionale Programmiermethoden wie `filter`, `map`, `limit`, `reduce`, `find`, `match` und so weiter.
+- Parallelismus: Ein Großteil der Stream-API ist für parallele Verarbeitung konzipiert und lässt uns leicht Leistungsgewinne auf Multiprozessorsystemen erzielen.
+
+## Wichtige Operationen auf Streams
+
+### Filtern
+
+Mit der Methode `filter` können wir Elemente aus einem Stream anhand einer Bedingung herausfiltern. Das Filtern gibt einen neuen Stream zurück, der nur die Elemente enthält, die das Filterkriterium erfüllen.
+
+```java
+List<String> names = Arrays.asList("Anna", "Bob", "Charles", "David");
+Stream<String> longNames = names.stream().filter(str -> str.length() > 4);
+```
+
+### Sortieren
+
+Die `sorted` Methode sortiert die Elemente eines Streams in natürlicher Reihenfolge oder mithilfe eines benutzerdefinierten `Comparator`.
+
+```java
+// Natürliche Reihenfolge
+List<Integer> numbers = Arrays.asList(1, 3, 2);
+List<Integer> sortedNumbers = numbers.stream().sorted().collect(Collectors.toList());
+
+// Mit eigenem Comparator
+List<String> names = Arrays.asList("Anna", "Bob", "Charles", "David");
+List<String> sortedNames = names.stream()
+        .sorted((name1, name2) -> name1.length() - name2.length())
+        .collect(Collectors.toList());
+```
+
+### Abbilden
+
+Die `map` Funktion transformiert die Elemente eines Streams in eine andere Form. Zum Beispiel können wir eine Liste von Strings in eine Liste ihrer Längen umwandeln.
+
+```java
+List<String> words = Arrays.asList("hello", "world");
+List<Integer> lengths = words.stream().map(String::length).collect(Collectors.toList());
+```
+
+Diese Methoden sind nur einige der vielfältigen Operationen, die auf Streams angewendet werden können. Weitere sind beispielsweise `reduce` zur Aggregation von Stream-Elementen, `limit` zur Begrenzung der Anzahl von Elementen im Stream oder `match` zum Testen, ob bestimmte Bedingungen erfüllt sind. Streams bieten ein mächtiges Werkzeug, um mit Daten in Java zu arbeiten und sollten ein fester Bestandteil in der Toolbox eines jeden Java-Entwicklers sein.
+
 ## Anwendung von Arrays
 
 Arrays finden Anwendung in zahlreichen Bereichen der Programmierung. Sie dienen zur Speicherung mehrerer Werte eines bestimmten Typs und ermöglichen es, mit diesen Werten in einer Schleife oder über Indizes zu arbeiten. Sie sind eine der grundlegenden Datenstrukturen und finden sich in nahezu jedem Bereich der Softwareentwicklung, von einfachen Aufgaben bis hin zu komplexen Algorithmen und Datenverarbeitungsaufgaben.
