@@ -22,27 +22,18 @@ public class App {
 
             switch (action) {
                 case "a":
-                    System.out.println("Which spell do you want to add?");
-                    String spellName = scanner.nextLine();
-                    System.out.println("What is the description of the spell?");
-                    String spellDescription = scanner.nextLine();
+                    // ask for spell name and description
                     spellBook.addSpell(spellName, spellDescription);
                     break;
                 case "r":
-                    System.out.println("Which spell do you want to remove?");
-                    String spellToRemove = scanner.nextLine();
+                    // ask for spell to be removed
                     spellBook.removeSpell(spellToRemove);
                     break;
                 case "s":
-                    System.out.println("Which spell do you want to see?");
-                    String spellToSee = scanner.nextLine();
-                    System.out.println(spellBook.getSpell(spellToSee));
+                    // use spellBook.getSpell() to get a specific spell;
                     break;
                 case "l":
-                    String[] spellNames = spellBook.getSpellNames();
-                    for (String spell : spellNames) {
-                        System.out.println(spell);
-                    }
+                    // use a for / for-each loop to show all spells
                     break;
                 case "v":
                     System.out.println("Bye!");
