@@ -49,6 +49,7 @@ public class SpellBook {
      */
     public void addSpell(String spellName, String spellDescription) {
         //add a new spell
+        spellBook.put(spellName, spellDescription);
     }
 
     /**
