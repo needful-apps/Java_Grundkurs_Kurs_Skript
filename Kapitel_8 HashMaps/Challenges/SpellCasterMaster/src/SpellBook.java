@@ -29,7 +29,7 @@ public class SpellBook {
      * @return the description of the spell, or null if the spell is not in the spell book
      */
     public String getSpell(String spellName) {
-        return spellBook.get(spellName);
+        // return spellname here
     }
 
     /**
@@ -38,7 +38,7 @@ public class SpellBook {
      * @return an array of all the spell names in the spell book
      */
     public String[] getSpellNames() {
-        return spellBook.keySet().toArray(new String[0]);
+        // get spell by name
     }
 
     /**
@@ -48,7 +48,7 @@ public class SpellBook {
      * @param spellDescription the description of the new spell
      */
     public void addSpell(String spellName, String spellDescription) {
-        spellBook.put(spellName, spellDescription);
+        //add a new spell
     }
 
     /**
@@ -57,7 +57,7 @@ public class SpellBook {
      * @param spellName the name of the spell to remove
      */
     public void removeSpell(String spellName) {
-        spellBook.remove(spellName);
+        // remove a spell
     }
 
     /**
