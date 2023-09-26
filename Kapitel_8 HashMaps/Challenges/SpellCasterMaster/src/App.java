@@ -23,6 +23,9 @@ public class App {
             switch (action) {
                 case "a":
                     // ask for spell name and description
+                    String spellName = "Leviosa"; // scanner.nextLine();
+                    String spellDescription = "Hebt dinge an";
+                        
                     spellBook.addSpell(spellName, spellDescription);
                     break;
                 case "r":
