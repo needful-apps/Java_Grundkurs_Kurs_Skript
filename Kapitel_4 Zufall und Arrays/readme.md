@@ -126,7 +126,8 @@ ArrayList<Datentyp> liste = new ArrayList<>();
 
 ### Hinzufügen von Elementen
 
-<img src="./waiting_line.png" alt="ArrayList" style="zoom:75%;" />
+<img src="./waiting_line.png" alt="ArrayList" style="zoom:75%;" />  
+
 Wie im Coffee Shop, werden neue Elemente (Kunden) am Ende der Liste hinzugefügt.
 
 ```java
@@ -134,7 +135,7 @@ liste.add("Müder Student");  // Fügt 1 am Ende der Liste hinzu
 ```
 
 
-Muss ein Element an einer bestimmten stelle eingefügt werden, werden kann dies durch mitgeben des Indexes geschehen. Alle Elemente ab dem Index werden um eine Position nach hinten verschoben.
+Muss ein Element an einer bestimmten Stelle eingefügt werden, werden kann dies durch mitgeben des Indexes geschehen. Alle Elemente ab dem Index werden um eine Position nach hinten verschoben.
 ```java
 ArrayList<String> liste = new ArrayList<>();
 liste.add(0, "Wichtige Geschäftsführerin");  // Fügt 2 an Index 0 hinzu, verschiebt andere Elemente
@@ -356,17 +357,6 @@ In Java gibt es neben der `ArrayList` weitere Klassen, die zur Java Collections 
     stack.push("Element 1");
     stack.push("Element 2");
     String topElement = stack.pop();  // topElement ist jetzt "Element 2"
-    ```
-
-4. **Deque (Double Ended Queue)**: Eine Deque unterstützt das Hinzufügen und Entfernen von Elementen an beiden Enden. Die `ArrayDeque`-Klasse ist eine wahrscheinlich effiziente Implementierung.
-
-    ```java
-    import java.util.ArrayDeque;
-
-    ArrayDeque<String> deque = new ArrayDeque<>();
-    deque.addFirst("Element 1");
-    deque.addLast("Element 2");
-    String firstElement = deque.removeFirst();  // firstElement ist jetzt "Element 1"
     ```
 
 Beachten Sie, dass jede dieser Alternativen ihre eigenen Vor- und Nachteile hat und die Wahl der geeigneten Datenstruktur von den spezifischen Anforderungen Ihres Programms abhängt.

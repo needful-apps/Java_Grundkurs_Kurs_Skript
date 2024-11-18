@@ -279,7 +279,7 @@ public class Main {
 }
 ```
 
-### Wichitge Methoden von Scanner
+### Wichtge Methoden von Scanner
 - **nextInt()**: Liest eine Ganzzahl von der Konsole ein.
 - **nextDouble()**: Liest eine Gleitkommazahl von der Konsole ein.
 - **nextLine()**: Liest eine Zeichenkette von der Konsole ein.
@@ -287,7 +287,7 @@ public class Main {
 
 <aside class="warning" style="background-color: #FDB813F9; color: #ffffff; padding-left: 10px; display: flex; align-items: center;">
   <div style="flex-shrink: 0; margin-right: 10px; font-size: 24px;">&#9888;</div>
-  <div style="background-color: rgba(255, 255, 255, 0.20); padding: 10px; flex-grow: 1;">Nachdem ein Zahlenwert eingelesen wurde, bleibt der Zeilenumbruch vom bestätigen der Eingabe zurück. aus `14` wird also `14\n`. Daher sollte vor dem Einlesen der nächsten `nextLine` ein weiteres `nextLine` aufgerufen werden, der den Zeilenumbruch abfängt.</div>
+  <div style="background-color: rgba(255, 255, 255, 0.20); padding: 10px; flex-grow: 1;">Nachdem ein Zahlenwert eingelesen wurde, bleibt der Zeilenumbruch vom Bestätigen der Eingabe zurück. aus `14` wird also `14\n`. Daher sollte vor dem Einlesen der nächsten `nextLine` ein weiteres `nextLine` aufgerufen werden, der den Zeilenumbruch abfängt.</div>
 </aside>
 
 

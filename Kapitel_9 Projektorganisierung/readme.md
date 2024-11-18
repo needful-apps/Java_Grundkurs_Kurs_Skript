@@ -176,7 +176,6 @@ jar {
 In dieser Gradle `build.gradle` Datei:
 - Das `java` Plugin ist aktiviert.
 - Die Gruppe und die Version des Projekts sind auf 'com.example' und '1.0-SNAPSHOT' eingestellt.
-- Die Quellkompatibilität ist auf Java 1.8 festgelegt.
 - `mavenCentral()` ist als Repository für Abhängigkeiten konfiguriert.
 - Es gibt eine Abhängigkeit zu `junit` für Testzwecke.
 - Die `useJUnitPlatform()` Methode wird aufgerufen, um JUnit für Tests zu verwenden.
@@ -260,24 +259,29 @@ Um Lombok in Ihr Projekt zu integrieren, müssen Sie es zuerst als Abhängigkeit
 Wenn Sie Maven verwenden, fügen Sie folgenden Code in Ihre `pom.xml` Datei ein:
 
 ```xml
-<dependencies>
-    <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>1.18.20</version>
-        <scope>provided</scope>
-    </dependency>
-</dependencies>
+<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+   <groupId>org.projectlombok</groupId>
+   <artifactId>lombok</artifactId>
+   <version>1.18.36</version>
+   <scope>provided</scope> 
+</dependency>
+
 ```
+
+Scope `provided` bedeutet, dass Lombok nur zur Kompilierungszeit benötigt wird und nicht zur Laufzeit.
 
 Für Gradle fügen Sie folgenden Code in Ihre `build.gradle` Datei ein:
 
 ```groovy
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+   // https://mvnrepository.com/artifact/org.projectlombok/lombok
+   compileOnly 'org.projectlombok:lombok:1.18.36'
+   annotationProcessor 'org.projectlombok:lombok:1.18.36'
 }
 ```
+`compileOnly` bedeutet, dass Lombok nur zur Kompilierungszeit benötigt wird und nicht zur Laufzeit. `annotationProcessor` wird verwendet, um die Annotationen von Lombok zu verarbeiten.  
+`annotationProcessor` wird verwendet, um die Annotationen von Lombok zu verarbeiten.  
 
 ##  Nutzung von Lombok
 
@@ -389,3 +393,107 @@ public class Main {
 In diesem Beispiel wurde `com.example.Print` durch den tatsächlichen Pfad Ihrer `Print` Klasse ersetzt.
 
 Das war's! Sie haben nun erfolgreich eine JAR-Datei mit Maven erstellt und diese in einem anderen Projekt verwendet.
+
+## Erstellen der Java-Bibliothek mit Gradle
+1. Neues Gradle-Projekt erstellen
+   Erstellen Sie ein neues Gradle-Projekt und fügen Sie eine Klasse namens Print hinzu:
+
+Dateistruktur:
+    
+```bash
+print-lib/
+├── build.gradle
+├── settings.gradle
+└── src/main/java/com/example/Print.java
+```
+
+Print.java:
+```java
+package com.example;
+
+public class Print {
+   public static void toConsole(String message) {
+   System.out.println(message);
+   }
+}
+```
+
+2. Konfiguration der build.gradle
+
+```gradle
+plugins {
+   id 'java'
+   id 'maven-publish'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+java {
+   withJavadocJar() // Erstellt ein JAR mit Javadoc
+   withSourcesJar() // Erstellt ein JAR mit Quellcode
+}
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+// Keine zusätzlichen Abhängigkeiten für die Bibliothek erforderlich
+}
+
+// Konfiguration des JAR-Plugins
+// Fügt das Manifest mit der Hauptklasse hinzu
+tasks.jar {
+   manifest {
+      attributes(
+      'Main-Class': 'com.example.Print'
+      )
+   }
+}
+```
+3. Erstellen der JAR-Datei
+   Navigieren Sie in der Befehlszeile in das Verzeichnis des Gradle-Projekts und führen Sie den folgenden Befehl aus:
+```bash
+./gradlew build
+```
+
+Die JAR-Datei wird im build/libs-Verzeichnis erstellt.
+
+4. Verwendung der JAR-Datei in einem anderen Projekt  
+- __a)__ Lokale Installation der JAR-Datei
+   Um die JAR-Datei im lokalen Maven-Repository verfügbar zu machen, führen Sie folgenden Befehl aus:
+
+```bash
+./gradlew publishToMavenLocal
+```
+- __b)__ Hinzufügen der JAR als Abhängigkeit  
+In einem anderen Gradle-Projekt fügen Sie die Abhängigkeit zu Ihrer build.gradle hinzu:
+
+```gradle
+repositories {
+   mavenLocal()
+   mavenCentral()
+   // oder andere Repositories
+   maven {
+         url '~/.m2/repository'
+    }
+}
+
+dependencies {
+   implementation 'com.example:print-lib:1.0-SNAPSHOT'
+}
+```
+
+5. Verwenden der Print-Klasse
+   Jetzt können Sie die Print.toConsole() Methode in Ihrem Projekt nutzen:
+
+```java
+import com.example.Print;
+
+public class Main {
+   public static void main(String[] args) {
+     Print.toConsole("Hello, World!");
+   }
+}
+``` 
