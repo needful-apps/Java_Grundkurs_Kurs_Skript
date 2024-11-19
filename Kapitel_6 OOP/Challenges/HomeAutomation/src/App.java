@@ -29,5 +29,16 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
+        // Abstract Class erstellen
+        // Interface erstellen
+        // Klassen erstellen
+        // Klassen instanzieren
+        // Methoden aufrufen
+
+        // Für Random:
+        return new Random().nextBoolean();
+
+        for (int i = 0; i < 10; i++) {
+            // Do something
     }
 }

@@ -14,6 +14,10 @@ public abstract class BasicMonster {
     private int attack = 12;
     private int defense = 8;
 
+    public BasicMonster(String name) {
+        this.name = name;
+    }
+
     /**
      * Returns the name of the monster.
      * 

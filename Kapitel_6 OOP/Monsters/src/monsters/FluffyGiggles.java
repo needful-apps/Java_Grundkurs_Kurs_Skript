@@ -7,7 +7,7 @@ package monsters;
 public class FluffyGiggles extends BasicMonster implements BehaviourInterface{
     
     public FluffyGiggles() {
-        this.setName("Fluffy Giggles");
+        super("Fluffy Giggles");
         this.setHealth(80);
     }
 

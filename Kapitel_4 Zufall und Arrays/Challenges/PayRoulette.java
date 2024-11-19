@@ -13,5 +13,6 @@ import java.util.Random;
 public class PayRoulette {
     public static void main(String[] args) {
         // Dein Code nach dieser Zeile
+
     }
 }
