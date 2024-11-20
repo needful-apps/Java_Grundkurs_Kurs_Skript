@@ -442,6 +442,14 @@ dependencies {
 // Keine zusätzlichen Abhängigkeiten für die Bibliothek erforderlich
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java // Veröffentlicht die Java-Komponenten
+        }
+    }
+}
+
 // Konfiguration des JAR-Plugins
 // Fügt das Manifest mit der Hauptklasse hinzu
 tasks.jar {
