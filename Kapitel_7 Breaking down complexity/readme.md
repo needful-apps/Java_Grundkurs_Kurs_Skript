@@ -1,4 +1,4 @@
-# Kapitel 6: Breaking down complexity
+# Kapitel 7: Breaking down complexity
 
 Programmierung kann oft kompliziert und überwältigend erscheinen, besonders wenn Sie versuchen, eine komplexe Aufgabe zu lösen. Eine bewährte Methode, um diese Herausforderung zu meistern, besteht darin, die Aufgabe in kleinere, handhabbare Teile zu zerlegen - ein Prozess, der oft als "Zerlegung" bezeichnet wird. Zusammen mit der Zerlegung kann die Erstellung von Ablaufdiagrammen dazu beitragen, den Überblick zu behalten und den Prozess zu organisieren. Draw.io ist ein kostenloses Online-Tool, das für die Erstellung solcher Diagramme verwendet werden kann.
 
