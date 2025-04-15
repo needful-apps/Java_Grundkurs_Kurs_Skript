@@ -1,4 +1,4 @@
-# Kapitel 7: Objektorientierte Programmierung in Java
+# Kapitel 6: Objektorientierte Programmierung in Java
 
 Objektorientierte Programmierung (OOP) ist ein Programmierparadigma, das auf dem Konzept der "Objekte" basiert, die Datenstrukturen und Methoden enthalten. In Java ist alles, mit Ausnahme von primitiven Datentypen, ein Objekt.
 
