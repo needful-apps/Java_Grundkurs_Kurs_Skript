@@ -1,6 +1,6 @@
 // Schreibe eine App, welche folgende Aufgaben erfüllt:
-// Task-1: Erstelle eine Funktion asForData, welche folgende Informationen erfragt:
-//           * Frage die Nutzer*in, ob diese (V)erschküsseln oder (E)ntschlüsseln möchte
+// Task-1: Erstelle eine Funktion askForData, welche folgende Informationen erfragt:
+//           * Frage die Nutzer*in, ob diese (V)erschlüsseln oder (E)ntschlüsseln möchte
 //           * Frage die Nutzer*in, wie viele Zeichen verschoben wird, bzw. wurde.
 //           * Frage die Nutzer*in, wie die Nachricht lautet
 //           * Rufe die Funktion crypt mit den Argumenten auf.
