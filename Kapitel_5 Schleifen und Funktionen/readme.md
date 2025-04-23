@@ -20,8 +20,6 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-Entschuldigung für die Verwirrung. Ja, du hast recht. Ich hätte die erweiterte `for`-Schleife, auch bekannt als "for-each" Schleife, in meinem vorherigen Post erwähnen sollen. Diese ist sehr nützlich, wenn man über eine Sammlung oder ein Array iterieren möchte.
-
 ## For-Each-Schleife
 
 Die For-Each-Schleife (auch bekannt als erweiterte `for`-Schleife) ist besonders nützlich, wenn man über eine Sammlung oder ein Array iterieren möchte, ohne den Index zu benötigen. Die Syntax sieht folgendermaßen aus:
