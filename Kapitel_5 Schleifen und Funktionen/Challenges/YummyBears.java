@@ -33,52 +33,6 @@ public class YummyBears {
         int purple = 0;
         int green = 0;
 
-        for (int i = 0; i < bag.length(); i++) {
-            char bear = bag.charAt(i);
-            switch (bear) {
-                case 'w':
-                case 'W':
-                    white++;
-                    break;
-                case 'o':
-                case 'O':
-                    orange++;
-                    break;
-                case 'y':
-                case 'Y':
-                    yellow++;
-                    break;
-                case 'r':
-                case 'R':
-                    red++;
-                    break;
-                case 'p':
-                case 'P':
-                    purple++;
-                    break;
-                case 'g':
-                case 'G':
-                    green++;
-                    break;
-            }
-        }
-
-        if (white <= red) {
-            System.out.println("Failed: There are not more white than red Yummies in the bag.");
-        } else if (yellow >= orange) {
-            System.out.println("Failed: There are not less yellow than orange Yummies in the bag.");
-        } else if (white < 10 || orange < 10 || yellow < 10 || red < 10 || purple < 10 || green < 10) {
-            System.out.println("Failed: There are not at least 10 Yummies of each color in the bag.");
-        } else if (purple + red > 30) {
-            System.out.println("Failed: There are more than 30 red and purple Yummies in the bag.");
-        } else if (purple > yellow) {
-            if (white <= red) {
-                System.out.println("Failed: There are more purple than yellow Yummies in the bag and not more white than red.");
-            }
-        } else if (white + orange + yellow + red + purple + green != 84 && white + orange + yellow + red + purple + green != 85) {
-            System.out.println("Failed: There are not 84 or 85 Yummies in the bag.");
-        } else {
-            System.out.println("Passed: The bag meets the quality requirements.");
-        }
+        
     }
 }
