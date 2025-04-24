@@ -63,7 +63,9 @@ Protobuf unterstützt primitive Typen wie `string, int32, bool` sowie komplexe T
    https://code.quarkus.io/
 
 
-
+# Port 9000 belegt
+Windows: .bat-Datei doppelklicken.
+macOS/Linux: chmod +x kill_port_9000.sh und dann ./kill_port_9000.sh.
 
 
 
