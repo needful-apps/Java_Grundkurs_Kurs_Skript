@@ -37,7 +37,7 @@ public class SpellBook {
      *
      * @return an array of all the spell names in the spell book
      */
-    public String[] getSpellNames() {
+    public List<String> getSpellNames() {
         // get spell by name
     }
 
