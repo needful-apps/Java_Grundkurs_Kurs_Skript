@@ -10,8 +10,6 @@ public class App {
         sugarFangs.printStats();
         fluffyGiggles.printStats();
 
-        sugarFangs.
-
         sugarFangs.attack(fluffyGiggles);
         fluffyGiggles.attack(sugarFangs);
 
