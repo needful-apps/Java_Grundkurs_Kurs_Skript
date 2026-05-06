@@ -337,15 +337,15 @@ In Java gibt es neben der `ArrayList` weitere Klassen, die zur Java Collections 
     linkedList.remove("Element 1");
     ```
 
-2. **Vector**: Die `Vector` Klasse ist ähnlich zur `ArrayList`, aber sie ist synchronisiert, d.h. sie ist thread-sicher. Diese Eigenschaft kann nützlich sein, wenn Sie in einer multithreaded Umgebung arbeiten.
+2. **ConcurrentLinkedDeque**: Die ConcurrentLinkedDeque Klasse ist ähnlich zur LinkedList, aber sie ist thread-sicher ohne globalen Lock. Sie eignet sich besonders für multithreaded Umgebungen, da mehrere Threads gleichzeitig lesen und schreiben können ohne sich gegenseitig zu blockieren.
 
     ```java
-    import java.util.Vector;
-
-    Vector<String> vector = new Vector<>();
-    vector.add("Element 1");
-    vector.add("Element 2");
-    vector.remove("Element 1");
+    import java.util.concurrent.ConcurrentLinkedDeque;
+    
+    ConcurrentLinkedDeque<String> deque = new ConcurrentLinkedDeque<>();
+    deque.add("Element 1");
+    deque.add("Element 2");
+    deque.remove("Element 1");
     ```
 
 3. **Stack**: Eine `Stack` repräsentiert einen LIFO (last in, first out) Stapel von Objekten. Man kann Objekte (genannt "Items") oben auf den Stapel legen (mit der `push`-Methode) und sie wieder herunternehmen (mit der `pop`-Methode).
