@@ -14,8 +14,8 @@ Vergleichsoperatoren werden verwendet, um zwei Werte zu vergleichen. Sie geben e
 
 | Operator | Beschreibung     | Beispiel mit Zahlen | Ergebnis mit Zahlen | Beispiel mit Strings | Ergebnis mit Strings |
 |----------|------------------|--------------------|---------------------|----------------------|----------------------|
-| ==       | Gleich           | 10 == 5            | false               | "Hello" == "World"   | false                |
-| !=       | Ungleich         | 10 != 5            | true                | "Hello" != "World"   | true                 |
+| ==       | Gleich           | 10 == 5            | false               | siehe equals()       | -                    |
+| !=       | Ungleich         | 10 != 5            | true                | siehe equals()       | -                    |
 | >        | Größer als       | 10 > 5             | true                | -                    | -                    |
 | <        | Kleiner als      | 10 < 5             | false               | -                    | -                    |
 | >=       | Größer gleich    | 10 >= 5            | true                | -                    | -                    |
